@@ -19,27 +19,36 @@
 #
 
 
-ACEFScore <- function (df = data.frame())
+#' Compute ACEF Score
+#'
+#' Compute the ACEF Score by the formula from XY
+#'
+#' @param	df		data frame, must contain age, ejectionFraction as rows
+#'	
+#' @export
+ACEFScore <- function (df = data.frame(), mapping = mapping() )
 {
+	# test data frame
+	
+	# test mapping
+	
+  # mapping access probably wrong, but for now it works
+
 	ACEFScore = c()
 	for (x in seq(1, nrow(df))) {
-		age = df[x,]$age
-		ef = df[x,]$ejectionFraction
+		age = df[x, as.character(mapping$age)]
+		ef = df[x, as.character(mapping$ejectionFraction)]
 		score = age/ef
-		if (df[x,]$preOpCreatinine > 2.0) {
+		if (df[x, as.character(mapping$preOpCreatinine)] > 2.0) {
 			score = score + 1
 		}
 		ACEFScore = c(ACEFScore, score)
 	}
-	df = cbind(df, ACEFScore)
-	
-	return (df)
+	return (ACEFScore)
 }
 
 
-aceftest = NULL
-aceftest$age = round(rnorm(20, sd = 20, mean = 30) + 35)
-aceftest$ejectionFraction = round(rnorm(20, sd = 20, mean = 30) + 35)
-aceftest$preOpCreatinine = abs(rnorm(20, sd = 1, mean = 1))
-acef = ACEFScore(aceftest)
-
+#' @export
+mapping <- function(...) {
+  mapping <- structure(as.list(match.call()[-1]), class="uneval")
+}

@@ -39,12 +39,5 @@ STSScore <- function (df = data.frame())
 	df = cbind(df, ACEFScore)
 	
 	return (df)
-}
-
-
-aceftest = NULL
-aceftest$age = round(rnorm(20, sd = 20, mean = 30) + 35)
-aceftest$ejectionFraction = round(rnorm(20, sd = 20, mean = 30) + 35)
-aceftest$preOpCreatinine = abs(rnorm(20, sd = 1, mean = 1))
-acef = ACEFScore(aceftest)
+} 
 

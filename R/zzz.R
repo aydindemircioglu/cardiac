@@ -21,7 +21,7 @@
  
  
 # create own environment
-SVMBridgeEnv = new.env(parent = emptyenv())
+cardiacEnv = new.env(parent = emptyenv())
 
 
  .onLoad <- function(libname, pkgname) {
@@ -45,6 +45,6 @@ SVMBridgeEnv = new.env(parent = emptyenv())
 
 
 .onAttach <- function (libname, pkgname) {
-	packageStartupMessage("SVMBridge v0.1 loaded.")
+	packageStartupMessage("cardiac v0.1 loaded.")
 }
 

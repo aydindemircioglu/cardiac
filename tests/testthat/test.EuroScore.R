@@ -1,0 +1,38 @@
+age <- c(95,90,85,80,75,70,65,60,55,50)
+sex <- c(1,0,1,0,1,0,1,0,1,0)
+ri <- c(4,3,1,2,1,3,4,1,3,4)
+cpd <- c(1,1,1,0,1,0,1,0,1,0)
+cld <- c(1,1,1,0,1,0,1,0,1,0)
+pm <- c(1,1,1,0,1,0,1,0,1,0)
+eca <- c(1,0,0,0,1,0,1,0,0,0)
+nd <- c(1,0,0,0,1,0,1,0,0,0)
+pcs <- c(1,0,0,0,1,0,1,0,0,0)
+creat<- c(1,0,0,0,1,0,1,0,0,1)
+ae <- c(1,0,0,0,1,0,1,0,0,0)
+cps <- c(1,0,0,0,1,0,1,0,0,0)
+doi <- c(1,0,0,0,1,0,1,0,0,0)
+nyha <- c(1,2,3,4,1,2,1,3,4,2)
+ccs <- c(1,0,0,0,1,0,1,0,0,0)
+ua <- c(1,1,1,0,1,0,1,0,1,0)
+lv.ef <- c(51,19,27,31,35,29,43,65,55,29)
+rmi <- c(1,0,0,0,1,0,1,0,0,1)
+ph <- c(1,0,0,0,1,0,1,0,0,1)
+em<- c(1,0,0,0,1,0,1,0,0,1)
+ot.icabg<- c(1,0,0,0,1,0,1,0,0,1)
+woi <- c(1,0,0,0,1,0,1,0,0,0)
+sta<- c(1,0,0,0,1,0,1,0,0,1)
+pisr<- c(1,0,0,0,1,0,1,0,0,1)
+x <- data.frame(age,sex,cpd,eca,nd,pcs,creat,ae,cps,ua,lv.ef,rmi,ph,em,ot.icabg,sta,pisr)
+source("EuroScore.R")
+es1 <- EuroScoreAdd.1(x)
+es2 <- EuroScoreLog.1(x)
+x <- data.frame(age,sex,ri,eca,pm,pcs,cld,ae,cps,doi,nyha,ccs,lv.ef,rmi,ph,em,woi,sta)
+source("EuroScore.R")
+esII <- EuroScoreLog.II(x)
+a<- 0
+EuroScoreAdd.1(a)
+
+
+
+
+#
